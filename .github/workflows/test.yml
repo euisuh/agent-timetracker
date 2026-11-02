@@ -1,0 +1,36 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.x'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run test:quality
+      - if: github.event_name == 'pull_request'
+        run: npm run lint:slop:changed -- --base "$PR_BASE_SHA"
+        env:
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      - run: npm run test:worker
+      - run: cd frontend && node --test
+      - run: pip install pytest
+      - run: python -m pytest backend/tests -q
+      - run: python3 -m pip install -r requirements-browser.txt
+      - run: python3 -m playwright install --with-deps chromium
+      - run: npm run test:browser

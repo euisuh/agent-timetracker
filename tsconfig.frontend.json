@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.helpers.json",
+  "files": [
+    "frontend/app.js",
+    "frontend/helpers.js",
+    "frontend/reports.js",
+    "frontend/report-helpers.js"
+  ]
+}

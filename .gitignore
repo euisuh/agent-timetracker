@@ -1,0 +1,9 @@
+
+# Regenerable design-handoff screenshots (scripts/capture-screens.py)
+design-handoff/screens/
+design-handoff/sheets/
+.DS_Store
+.wrangler/
+node_modules/
+etc/
+.claude/

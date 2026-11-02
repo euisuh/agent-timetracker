@@ -1,0 +1,21 @@
+{
+  "html": "<div class=\"modal-head\"><h2 id=\"modal-title\">Start a new task</h2><button class=\"close\" aria-label=\"Close\" data-close=\"\">\u00d7</button></div><form data-new-form=\"\"><div class=\"modal-body\"><div class=\"detail-section-label\">Who</div><div class=\"notice\">You (admin) \u00b7 New tasks are admin-only</div><label>Project<select name=\"project\" required=\"\"><option value=\"1\">timetracker</option><option value=\"2\">research</option><option value=\"3\">work</option></select></label><label>Purpose<select name=\"purpose\"><option value=\"\">Unclassified</option><option value=\"research\">Research</option><option value=\"career\">Developer &amp; career</option><option value=\"business\">Business &amp; assets</option><option value=\"support\">Support &amp; life</option></select></label><label>Kind<select name=\"activity\" required=\"\"><option value=\"1\" selected=\"\">Assigned Task</option><option value=\"2\">implement</option><option value=\"3\">review</option><option value=\"4\">debug</option><option value=\"5\">research</option><option value=\"6\">write</option><option value=\"7\">plan</option><option value=\"8\">ops</option></select></label><label>Task description<input name=\"description\" required=\"\" maxlength=\"240\" placeholder=\"What's the task?\"></label></div><div class=\"modal-actions\"><button type=\"button\" class=\"action\" data-close=\"\">Cancel</button><button class=\"primary\">Start task</button></div></form>",
+  "controls": [
+    [
+      "project",
+      "1"
+    ],
+    [
+      "purpose",
+      ""
+    ],
+    [
+      "activity",
+      "1"
+    ],
+    [
+      "description",
+      ""
+    ]
+  ]
+}

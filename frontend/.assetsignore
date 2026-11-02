@@ -1,0 +1,8 @@
+.env
+.env.*
+.gitignore
+package.json
+*.test.js
+e2e/
+SPEC.md
+HANDOFF.md

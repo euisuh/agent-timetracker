@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "check:worker": "wrangler deploy --dry-run",
+    "deploy": "wrangler d1 migrations apply timetracker --remote && wrangler deploy",
+    "tail": "wrangler tail",
+    "test:worker": "node --test --test-concurrency=1 worker/*.test.mjs",
+    "test:browser": "python3 scripts/e2e_purpose.py && python3 scripts/e2e_reports.py && python3 scripts/e2e_task_identity.py && python3 scripts/e2e_route_validation.py && python3 scripts/e2e_scoped_durations.py && python3 scripts/e2e_calendar_packing.py && python3 scripts/e2e_activity_recent.py && python3 scripts/e2e_calendar_dst.py && python3 scripts/e2e_fixture_ports.py && python3 scripts/e2e_zero_duration.py && python3 scripts/e2e_hidden_chart.py && python3 scripts/e2e_metadata_edit.py && python3 scripts/e2e_activity_drilldown.py && python3 scripts/e2e_modal_draft_rerender.py",
+    "lint": "oxlint --max-warnings=0 frontend worker",
+    "typecheck": "tsc -p tsconfig.frontend.json",
+    "lint:slop:changed": "node tools/oxlint/changed.mjs",
+    "test:quality": "node --test tools/oxlint/changed.test.mjs tools/typecheck/frontend.test.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.149.0",
+    "@oxlint/plugins": "1.78.0",
+    "oxlint": "1.78.0",
+    "typescript": "6.0.3"
+  }
+}

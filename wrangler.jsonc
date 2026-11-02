@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "timetracker",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-23",
+  "compatibility_flags": ["nodejs_compat"],
+  // Template. Replace placeholders before deploying; routes and crons are deliberately omitted.
+  // To run the stale-timer sweep, add: "triggers": { "crons": ["*/15 * * * *"] }
+  "workers_dev": false,
+  // "routes": [{ "pattern": "time.example.com/*", "zone_name": "example.com" }],
+  "assets": {
+    "directory": "./frontend",
+    "run_worker_first": ["/api/*", "/health"]
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "timetracker",
+    "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+    "migrations_dir": "migrations"
+  }],
+  "vars": {
+    "TIMETRACKER_STALE_HOURS": "8",
+    "DASHBOARD_HOST": "time.example.com",
+    "ACCESS_TEAM_DOMAIN": "your-team.cloudflareaccess.example",
+    "ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUD"
+    // OWNER_EMAIL intentionally unset: set it to restrict dashboard Access users.
+  },
+  "observability": {
+    "enabled": true,
+    "logs": { "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.01 }
+  }
+}

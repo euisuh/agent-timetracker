@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "dev": "npx wrangler dev",
+    "test": "node --test"
+  },
+  "type": "module"
+}
