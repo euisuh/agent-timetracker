@@ -2,7 +2,7 @@
 
 Status: retired 2026-11-02. Run: 2026-08-05 to 2026-11-02.
 
-> **About this repository.** This is a sanitized snapshot of a private repository, published as a single commit because the original history contains private content. It has been stripped of personal data and deployment configuration (`wrangler.jsonc` is a placeholder template). The private history spans 2026-08-04 to 2026-10-30 with 313 commits and 158 merged PRs, written largely with AI coding agents (Codex and Claude) under my direction, as the commit trailers there record. Figures in this case study that count commits, PRs, issues or production data (313 commits, 158 merged PRs, 71 issues, 2,554 entries and so on), and the commit hashes and `PR #` / issue numbers it cites, refer to that private repository and cannot be checked here. The hosted service is retired. Reviewers can ask to see the private history.
+> **About this repository.** This is a sanitized snapshot of a private repository, published as a single commit because the original history contains private content. It has been stripped of personal data and deployment configuration (`wrangler.jsonc` is a placeholder template). The private history spans 2026-08-04 to 2026-10-30 with 313 commits and 158 merged PRs, written largely with AI coding agents (Codex and Claude) under my direction, as the commit trailers there record. Figures in this case study that count commits, PRs, issues or production data (313 commits, 158 merged PRs, 71 issues, 2,554 entries and so on), and the commit hashes and `PR #` / issue numbers it cites, refer to that private repository and cannot be checked here. The hosted service is retired.
 
 ## How this was built
 
